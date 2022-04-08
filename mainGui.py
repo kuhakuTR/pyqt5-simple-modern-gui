@@ -25,8 +25,11 @@ def main():
             self.exitButton = QtWidgets.QPushButton(self)
             self.exitButton.move(1150,0)
             self.exitButton.resize(50,50)
-            self.exitButton.setStyleSheet("background-color:#B20600;\
-                                           border-top-Right-radius:40px")
+            self.exitButton.setStyleSheet("QPushButton{background-color:#B20600;\
+                                           border-top-Right-radius:40px;}\
+                                           QPushButton:hover{background-color:#e60800;}\
+                                           QPushButton:pressed{background-color:#cc0700;\
+                                           padding: 1px -1px -1px 1px}")
             self.exitButton.clicked.connect(self.close)
             self.exitButton.setText("✕ ")
             self.exitButton.setFont(QFont("Arial",20))
@@ -34,8 +37,11 @@ def main():
             self.hideButton = QtWidgets.QPushButton(self)
             self.hideButton.move(1100,0)
             self.hideButton.resize(50,50)
-            self.hideButton.setStyleSheet("background-color:#525E75;\
-                                           border-bottom-Left-radius:40px")
+            self.hideButton.setStyleSheet("QPushButton{background-color:#525E75;\
+                                           border-bottom-Left-radius:40px;}\
+                                           QPushButton:hover{background-color:#5e6d87;}\
+                                           QPushButton:pressed{background-color:#546078;\
+                                           padding: 1px -1px -1px 1px}")
             self.hideButton.clicked.connect(self.showMinimized)
             self.hideButton.setText(" -")
             self.hideButton.setFont(QFont("Arial",25))
