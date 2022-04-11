@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMainWindow,QApplication
 from PyQt5.QtCore import Qt, QPoint
 from PyQt5.QtGui import QFont
+import stylesheets
 import sys
 
 def main():
@@ -25,11 +26,7 @@ def main():
             self.exitButton = QtWidgets.QPushButton(self)
             self.exitButton.move(1150,0)
             self.exitButton.resize(50,50)
-            self.exitButton.setStyleSheet("QPushButton{background-color:#B20600;\
-                                           border-top-Right-radius:40px;}\
-                                           QPushButton:hover{background-color:#e60800;}\
-                                           QPushButton:pressed{background-color:#cc0700;\
-                                           padding: 1px -1px -1px 1px}")
+            self.exitButton.setStyleSheet(stylesheets.exitButtonStyle)
             self.exitButton.clicked.connect(self.close)
             self.exitButton.setText("✕ ")
             self.exitButton.setFont(QFont("Arial",20))
@@ -37,11 +34,7 @@ def main():
             self.hideButton = QtWidgets.QPushButton(self)
             self.hideButton.move(1100,0)
             self.hideButton.resize(50,50)
-            self.hideButton.setStyleSheet("QPushButton{background-color:#525E75;\
-                                           border-bottom-Left-radius:40px;}\
-                                           QPushButton:hover{background-color:#5e6d87;}\
-                                           QPushButton:pressed{background-color:#546078;\
-                                           padding: 1px -1px -1px 1px}")
+            self.hideButton.setStyleSheet(stylesheets.hideButtonStyle)
             self.hideButton.clicked.connect(self.showMinimized)
             self.hideButton.setText(" -")
             self.hideButton.setFont(QFont("Arial",25))
