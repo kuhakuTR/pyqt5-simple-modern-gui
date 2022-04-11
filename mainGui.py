@@ -1,6 +1,6 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMainWindow,QApplication
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QPoint
 from PyQt5.QtGui import QFont
 import sys
 
@@ -45,6 +45,14 @@ def main():
             self.hideButton.clicked.connect(self.showMinimized)
             self.hideButton.setText(" -")
             self.hideButton.setFont(QFont("Arial",25))
+
+        def mousePressEvent(self, event):
+            self.oldPos = event.globalPos()
+
+        def mouseMoveEvent(self, event):
+            delta = QPoint (event.globalPos() - self.oldPos)
+            self.move(self.x() + delta.x(), self.y() + delta.y())
+            self.oldPos = event.globalPos()
 
     def startApp():
         app = QApplication(sys.argv)
