@@ -13,13 +13,15 @@ def main():
             self.setAttribute(Qt.WA_TranslucentBackground)
             self.centerPos = QtWidgets.QDesktopWidget().availableGeometry().center()
             self.resize(1200,800)
+            self.oldPos = QPoint(self.centerPos)
             qr = self.frameGeometry()
             qr.moveCenter(self.centerPos)
             self.move(qr.topLeft())
             self.setWindowTitle("Modern gui by KuhakuTR")
             self.frame = QtWidgets.QFrame(self)
             self.frame.setStyleSheet("border-radius:40px;\
-                                      background-color:qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:1, stop:0 rgba(6, 44, 48, 255), stop:1 rgba(5, 89, 91, 255))")
+                                      background-color:qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:1, stop:0 rgba(6, 44, 48, 255), stop:1 rgba(5, 89, 91, 255));\
+                                      border: 2px solid gray;")
             self.frame.setGeometry(0,0,1200,800)
             self.initUI()
         def initUI(self):
@@ -38,6 +40,7 @@ def main():
             self.hideButton.clicked.connect(self.showMinimized)
             self.hideButton.setText(" -")
             self.hideButton.setFont(QFont("Arial",25))
+            
 
         def mousePressEvent(self, event):
             self.oldPos = event.globalPos()
