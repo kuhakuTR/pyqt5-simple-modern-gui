@@ -20,8 +20,7 @@ def main():
             self.setWindowTitle("Modern gui by KuhakuTR")
             self.frame = QtWidgets.QFrame(self)
             self.frame.setStyleSheet("border-radius:40px;\
-                                      background-color:qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:1, stop:0 rgba(6, 44, 48, 255), stop:1 rgba(5, 89, 91, 255));\
-                                      border: 2px solid gray;")
+                                      background-color:qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 220), stop:1 rgba(36, 36, 36, 230));")
             self.frame.setGeometry(0,0,1200,800)
             self.initUI()
         def initUI(self):
